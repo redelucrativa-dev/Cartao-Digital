@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LuxeEstate | Corretor de Alto Padrão</title>
     
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Via CDN para funcionar sem build) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Tailwind Config -->
+    <!-- Configuração do Tailwind -->
     <script>
       tailwind.config = {
         theme: {
@@ -59,15 +59,8 @@
         overflow-x: hidden;
         background-color: #000;
       }
-      
-      /* Utilitário para esconder scrollbar se necessário, mas manter funcionalidade */
-      .no-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .no-scrollbar {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-      }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 <script type="importmap">
 {
@@ -92,18 +85,17 @@
               alt="Luxury House Background" 
               class="w-full h-full object-cover opacity-90 blur-[3px] scale-105"
             />
-            <!-- Overlays -->
             <div class="absolute inset-0 bg-black/50 backdrop-blur-[1px]"></div>
             <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/80"></div>
         </div>
 
-        <!-- Main Content Area -->
+        <!-- Conteúdo Principal -->
         <main class="relative z-10 w-full max-w-md p-4 min-h-screen flex flex-col">
             
-            <!-- Glass Container -->
+            <!-- Container Efeito Vidro -->
             <div class="flex-1 mt-4 mb-4 flex flex-col shadow-2xl shadow-black/50 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
                 
-                <!-- PROFILE HEADER -->
+                <!-- CABEÇALHO / PERFIL -->
                 <div class="flex flex-col items-center text-center mb-8 animate-[fadeInUp_0.8s_ease-out_forwards]">
                     <div class="relative group cursor-pointer transition-transform duration-300 hover:scale-105">
                         <div class="absolute -inset-1 bg-gradient-to-r from-gold to-gold-light rounded-full opacity-75 blur group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
@@ -129,18 +121,16 @@
                     </p>
                 </div>
 
-                <!-- ACTION GRID (BOTOES) -->
+                <!-- GRID DE AÇÕES (BOTÕES) -->
                 <div class="grid grid-cols-2 gap-4 w-full mb-8">
                     
-                    <!-- WhatsApp Button -->
+                    <!-- Botão WhatsApp -->
                     <div class="animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 h-full" style="animation-delay: 0.2s;">
                         <button onclick="window.open('https://wa.me/5511999999999', '_blank')" class="w-full h-full group relative flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-500 ease-out hover:animate-float-hover hover:bg-gradient-to-br hover:from-white/10 hover:to-gold/20 hover:border-gold/50 hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.3)] active:scale-95 overflow-hidden">
-                            <!-- Shine Overlay -->
                             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-transparent via-white/10 to-transparent transition-opacity duration-500 pointer-events-none"></div>
-                            <!-- Inner Border -->
                             <div class="absolute inset-0 rounded-xl border border-white/5 pointer-events-none shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]"></div>
                             
-                            <!-- Icon -->
+                            <!-- Icon SVG -->
                             <div class="relative z-10 text-gold/90 group-hover:text-white transition-all duration-300 mb-3 transform group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
                             </div>
@@ -148,7 +138,7 @@
                         </button>
                     </div>
 
-                    <!-- Location Button -->
+                    <!-- Botão Localização -->
                     <div class="animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 h-full" style="animation-delay: 0.3s;">
                         <button onclick="window.open('https://maps.google.com', '_blank')" class="w-full h-full group relative flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-500 ease-out hover:animate-float-hover hover:bg-gradient-to-br hover:from-white/10 hover:to-gold/20 hover:border-gold/50 hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.3)] active:scale-95 overflow-hidden">
                             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-transparent via-white/10 to-transparent transition-opacity duration-500 pointer-events-none"></div>
@@ -161,7 +151,7 @@
                         </button>
                     </div>
 
-                    <!-- Email Button -->
+                    <!-- Botão E-mail -->
                     <div class="animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 h-full" style="animation-delay: 0.4s;">
                         <button onclick="window.location.href = 'mailto:contato@luxeestate.com'" class="w-full h-full group relative flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-500 ease-out hover:animate-float-hover hover:bg-gradient-to-br hover:from-white/10 hover:to-gold/20 hover:border-gold/50 hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.3)] active:scale-95 overflow-hidden">
                             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-transparent via-white/10 to-transparent transition-opacity duration-500 pointer-events-none"></div>
@@ -174,7 +164,7 @@
                         </button>
                     </div>
 
-                    <!-- Portfolio Button -->
+                    <!-- Botão Portfólio -->
                     <div class="animate-[fadeInUp_0.6s_ease-out_forwards] opacity-0 h-full" style="animation-delay: 0.5s;">
                         <button onclick="window.open('https://example.com', '_blank')" class="w-full h-full group relative flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all duration-500 ease-out hover:animate-float-hover hover:bg-gradient-to-br hover:from-white/10 hover:to-gold/20 hover:border-gold/50 hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.3)] active:scale-95 overflow-hidden">
                             <div class="absolute inset-0 opacity-0 group-hover:opacity-100 bg-gradient-to-tr from-transparent via-white/10 to-transparent transition-opacity duration-500 pointer-events-none"></div>
@@ -189,7 +179,7 @@
 
                 </div>
 
-                <!-- SAVE CONTACT (CTA) -->
+                <!-- SALVAR CONTATO (CTA) -->
                 <button 
                   onclick="alert('Iniciando download do vCard...')"
                   class="
@@ -205,7 +195,6 @@
                   "
                   style="animation-delay: 0.6s;"
                 >
-                  <!-- Glare effect -->
                   <div class="absolute inset-0 bg-white/30 w-1/2 h-full skew-x-[-25deg] -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-1000 ease-in-out blur-sm"></div>
                   
                   <div class="flex items-center justify-center gap-3 relative z-10">
@@ -214,7 +203,7 @@
                   </div>
                 </button>
 
-                <!-- FEATURED PROPERTY -->
+                <!-- IMÓVEL EM DESTAQUE -->
                 <div class="w-full animate-[fadeInUp_1s_ease-out_forwards] opacity-0" style="animation-delay: 0.8s;">
                   <h3 class="text-white text-xs uppercase tracking-widest mb-3 pl-1 border-l-2 border-gold flex items-center gap-2 drop-shadow-md">
                     <span class="font-semibold">Oportunidade do Mês</span>
@@ -248,7 +237,7 @@
                 <!-- Spacer -->
                 <div class="flex-1"></div>
 
-                <!-- FOOTER -->
+                <!-- RODAPÉ -->
                 <footer class="mt-12 mb-6 flex flex-col items-center animate-[fadeInUp_1.2s_ease-out_forwards] opacity-0" style="animation-delay: 1s;">
                   <div class="flex gap-6 mb-6">
                     <a href="#" class="text-gray-400 hover:text-gold hover:scale-110 transition-all duration-300">
